@@ -2,6 +2,13 @@
 
 Example scrip; If you need to update your DistributionPoints certificates, if they have expired or if you have restored your MECM environment.
 
+## Script Sequence
+
+1. Asks for an import/export Password
+2. loops through all your DP except CloudDPs
+3. exports the Certificate with the private key locally to the DP via Remote Powershell using the Password
+4. Imports the DP Cert using Set-CMDistributionPoint using the Password
+
 ## Prerequisites
 
 * Exportable Server [Server Auth](https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/network/pki-certificate-requirements#BKMK_PKIcertificates_for_servers:~:text=Enhanced%20Key%20Usage%20value%20must%20contain%20Server%20Authentication%20(1.3.6.1.5.5.7.3.1).,-If) in the My Computer Store
